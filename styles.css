@@ -13,7 +13,7 @@
   --gray: #fcfbfb4d;
   --red: red;
   --magenta: #ff00ff;
-  --cursor-size: 20px;
+  --cursor-size: 15px;
   --cursor-border: 2px;
 }
 
@@ -29,7 +29,8 @@ body{
 
 #cursor{
   position: fixed;
-  left: 0; top: 0;
+  left: 0; 
+  top: 0;
   width: var(--cursor-size); 
   height: var(--cursor-size);
   border: 2px solid var(--magenta);
@@ -55,9 +56,105 @@ body{
 
 
 @media (pointer: coarse){
-  #cursor{ display:block; } /* oculta en pantallas táctiles */
+  #cursor{ display:none; } /* oculta en pantallas táctiles */
 }
 
 @media (prefers-reduced-motion: reduce){
   #cursor{ display: none; }
+}
+
+
+/* *****************************
+*************MENU************* */
+
+/* MENÚ (simple, enunciativo) */
+/* #menu{
+  position: fixed;
+  inset: 0 0 auto 0;
+  padding: .8rem 1rem;
+  z-index: 1000;
+}
+
+#menu ul{ 
+    list-style: none;
+    display: flex;
+    gap: 1rem; 
+    justify-content: center;
+}
+
+#menu a{ 
+    color: var(--white); 
+    text-decoration: 
+    none; 
+    font-weight: 600; 
+}
+
+#menu a:hover{
+    color: var(--magenta); 
+}
+ */
+
+
+/* *****************************
+*************HOME************* */
+
+#home{
+  min-height: 100dvh;            /* alto mínimo igual a la altura de la ventana, estable en mobile */
+  display: grid;                 /* grid simple para centrar contenido */
+  place-items: center;           /* centra horizontal y vertical en la celda */
+  overflow: hidden;              /* oculta cualquier desbordamiento (animaciones de entrada) */
+  padding-inline: 1rem;          /* respiración lateral en pantallas pequeñas */
+}
+
+#name-container{
+  position: relative;            /* permite posicionar el reflejo de forma absoluta dentro */
+  text-align: center;            /* centra el texto en línea */
+  line-height: 1;                /* línea compacta para títulos grandes */  
+}
+
+#name-container h1{
+  font-size: clamp(3rem, 12vw, 10rem);  
+  font-weight: bold;
+  color: var(--white);
+  text-shadow: 0 0 15px rgba(251, 250, 250, 0.8), 0 0 30px var(--gray);
+  margin: 0;
+}
+
+#reflection{
+  font-size: clamp(3rem, 12vw, 10rem);
+  font-weight: bold;
+  color: var(--gray);
+  text-shadow: none;
+  transform: scaleY(-1);
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  opacity: 0.5;
+  filter: blur(3px);
+}
+
+/* ***************************
+**********Secciones 2–4 **** */
+
+
+.section2, .section3, .contact{
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 6rem);
+  padding-inline: clamp(1rem, 4vw, 3rem); 
+}
+
+
+.section2, .contact{
+  background-color: var(--gray);
+}
+
+
+
+
+@media (max-width: 480px){
+  #reflection{ filter: blur(2px); opacity: .45; } /* suaviza el espejo */
 }
