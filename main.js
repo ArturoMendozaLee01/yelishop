@@ -96,12 +96,18 @@ tlHome
     duration: 0.4,
     ease: "elastic.out(1, 0.1)",
     yoyo: true,
-    repeat: 3
+    repeat: 1,
   }, 2)
   .to("#reflection", {
     scale: 1.1,
     duration: 0.4,
     ease: "elastic.out(1, 0.1)",
     yoyo: true,
-    repeat: 3
-  }, "<");
+    repeat: 1
+  }, "<")
+  .from(".menu-item",{
+    y:-300,
+    ease:"power3.out",
+    duration:1,
+    stagger:0.25,
+  });

@@ -18,8 +18,8 @@
 }
 
 body{
-    background-color: var(--black);
-    color: var(--white);
+  background-color: var(--black);
+  color: var(--white);
 }
 
 
@@ -46,8 +46,8 @@ body{
   contain: layout style paint;
 }
 #cursor.cursor--down{ 
-    transform: translate(-50%, -50%) scale(.85); 
-    background: transparent;
+  transform: translate(-50%, -50%) scale(.85); 
+  background: transparent;
 }
 
 #cursor.cursor--hover{
@@ -68,37 +68,42 @@ body{
 *************MENU************* */
 
 /* MENÚ (simple, enunciativo) */
-/* #menu{
+#menu{
   position: fixed;
   inset: 0 0 auto 0;
-  padding: .8rem 1rem;
-  z-index: 1000;
+  padding: clamp(.6rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.5rem);
+  z-index: 1;
 }
 
 #menu ul{ 
-    list-style: none;
-    display: flex;
-    gap: 1rem; 
-    justify-content: center;
+  list-style: none;
+  display: flex;  
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 5vw, 3rem);
 }
 
 #menu a{ 
-    color: var(--white); 
-    text-decoration: 
-    none; 
-    font-weight: 600; 
+  color: var(--white); 
+  text-decoration: none; 
+  font-weight: 600;   
+  font-family:inherit;  
+  display: inline-block;
+  font-size: clamp(.95rem, 2.2vw, 1.1rem);
 }
 
 #menu a:hover{
-    color: var(--magenta); 
+  color: var(--magenta); 
 }
- */
+
 
 
 /* *****************************
 *************HOME************* */
 
+
 #home{
+  position:relative;
   min-height: 100dvh;            /* alto mínimo igual a la altura de la ventana, estable en mobile */
   display: grid;                 /* grid simple para centrar contenido */
   place-items: center;           /* centra horizontal y vertical en la celda */
@@ -106,10 +111,23 @@ body{
   padding-inline: 1rem;          /* respiración lateral en pantallas pequeñas */
 }
 
+#home-video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.3);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
 #name-container{
   position: relative;            /* permite posicionar el reflejo de forma absoluta dentro */
   text-align: center;            /* centra el texto en línea */
-  line-height: 1;                /* línea compacta para títulos grandes */  
+  line-height: 1;                /* línea compacta para títulos grandes */    
+  z-index: 1;
 }
 
 #name-container h1{
@@ -134,6 +152,8 @@ body{
   filter: blur(3px);
 }
 
+
+
 /* ***************************
 **********Secciones 2–4 **** */
 
@@ -151,8 +171,6 @@ body{
 .section2, .contact{
   background-color: var(--gray);
 }
-
-
 
 
 @media (max-width: 480px){
