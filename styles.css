@@ -185,7 +185,7 @@ body.nav-on-light nav a{
 section.sticky{
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background-color: var(--white);
   color: var(--black);
@@ -254,22 +254,29 @@ section.sticky{
     transition: none !important;
   }
 }
- 
+
+
 @media (max-width: 1024px){
-  .sticky-header{ width: 220vw; }       
-  .sticky-header h1{ letter-spacing: -0.04em; font-size: 90vw;
+  .sticky-header{ width: 220vw;height: 90%;}       
+  .sticky-header h1{ letter-spacing: -0.04em; font-size: 90vw; 
   }
 }
 
-@media (max-width: 768px){
-  .sticky-header{ width: 190vw; }
-  .sticky-header h1{ font-size: 90vw; letter-spacing: -0.035em; }
+
+@media (max-width: 900px) {
+  .sticky-header {
+    width: 310vw; 
+    height: 75%;
+  }
+  .sticky-header h1{ font-size: 45vw; letter-spacing: -0.0.5em; line-height: 0.99; }  
 }
 
+
 @media (max-width: 480px){
-  .sticky-header{ width: 170vw; }
+  .sticky-header{ width: 450vw; }
   .sticky-header h1{ font-size: 90vw; letter-spacing: -0.03em; line-height: 0.95; }
 }
+
 
 
 
