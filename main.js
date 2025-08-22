@@ -50,34 +50,100 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* =========================
+   Sección Menu
+   Requiere: GSAP 3.12+
+   ========================= */
 
 
-// === HOME (timeline) ===
-  const tlHome = gsap.timeline({ defaults: { ease: "bounce.out" } });
+const toggle = document.getElementById('menuToggle');
+const menu = document.getElementById('menu');
+const items = menu.querySelectorAll('li');
 
-  tlHome
-    .from("#home-h1", { y: -600, duration: 1.5 })
-    .from("#reflection", { y: 600, duration: 1.5 }, "<")
-    .to("#home-h1", {
-      scale: 1.1,
-      duration: 0.4,
-      ease: "elastic.out(1, 0.1)",
-      yoyo: true,
-      repeat: 1,
-    }, 2)
-    .to("#reflection", {
-      scale: 1.1,
-      duration: 0.4,
-      ease: "elastic.out(1, 0.1)",
-      yoyo: true,
-      repeat: 1
-    }, "<")
-    .from(".menu-item",{
-      y:-300,
-      ease:"power3.out",
-      duration:1,
-      stagger:0.25,
-    });
+const tl = gsap.timeline({ paused: true, reversed: true });
+
+
+tl.to(menu, {
+  y: 0,
+  duration: 0.5,
+  ease: "power4.out"
+}).from(items, {    
+  opacity: 0,
+  y: 40,
+  duration: 0.5,
+  ease: "power2.out",
+  stagger: 0.1
+}, "-=0.3");
+
+toggle.addEventListener('click', () => {
+tl.reversed() ? tl.play() : tl.reverse();
+});
+
+
+// Navegar al seleccionar una opción del menú (desktop y móvil)
+menu.addEventListener('click', (e) => {
+  const link = e.target.closest('a');
+  if (!link) return;
+
+  const href = link.getAttribute('href');
+  if (!href || !href.startsWith('#')) return;
+
+  e.preventDefault();
+
+  const go = () => {
+    const section = document.querySelector(href);
+    if (section) {
+      gsap.to(window, {        
+        duration: 2.5,      // controla la velocidad
+        ease: "power2.inOut",
+        scrollTo: { y: section, offsetY: 0, autoKill:false, }
+      });
+
+      /* section.scrollIntoView({ behavior: 'smooth', block: 'start' }); */
+    }
+    // Limpia el callback para no acumularlo
+    tl.eventCallback('onReverseComplete', null);
+  };
+
+  // Si el menú está abierto, ciérralo y luego navega; si ya está cerrado, navega directo
+  if (!tl.reversed()) {
+    tl.eventCallback('onReverseComplete', go);
+    tl.reverse();
+  } else {
+    go();
+  }
+});
+
+   
+
+/* =========================
+   Sección Home
+   Requiere: GSAP 3.12+
+   ========================= */
+
+const tlHome = gsap.timeline({ defaults: { ease: "bounce.out" } });
+
+tlHome
+  .from("#home-h1", { y: -600, duration: 1.5 })
+  .from("#reflection", { y: 600, duration: 1.5 }, "<")
+  .to("#home-h1", {
+    scale: 1.1,
+    duration: 0.4,
+    ease: "elastic.out(1, 0.1)",
+    yoyo: true,
+    repeat: 1,
+  }, 2)
+  .to("#reflection", {
+    scale: 1.1,
+    duration: 0.4,
+    ease: "elastic.out(1, 0.1)",
+    yoyo: true,
+    repeat: 1
+  }, "<")
+  .from("#menuToggle",{
+    y:-300,        
+    ease: "bounce.in",
+  });
 
 
 
