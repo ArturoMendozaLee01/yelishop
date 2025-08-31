@@ -83,7 +83,11 @@ body.nav-on-light nav a{
   border-radius: 5px;
   cursor: pointer;
 
+<<<<<<< HEAD
   font-size: 2em;
+=======
+  font-size: 2.5em;
+>>>>>>> 5dc41af3ac944821b9739e74a8a7a8baef32e140
   font-weight: bolder;
 }
 
