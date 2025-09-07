@@ -82,12 +82,7 @@ body.nav-on-light nav a{
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-
-<<<<<<< HEAD
   font-size: 2em;
-=======
-  font-size: 2.5em;
->>>>>>> 5dc41af3ac944821b9739e74a8a7a8baef32e140
   font-weight: bolder;
 }
 
@@ -98,7 +93,7 @@ body.nav-on-light nav a{
   left: 0;
   width: 100%;
   height: 100vh;
-  background: var(--black);
+  background: var(--green-dark);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,12 +115,12 @@ body.nav-on-light nav a{
   color: var(--white);
   text-decoration: none;
   transition: color 0.3s;
+  line-height: 2;
 }
 
 #menu a:hover {
   color: var(--magenta);
 }    
-
 
 
 
@@ -182,6 +177,7 @@ body.nav-on-light nav a{
   opacity: 0.5;
   filter: blur(3px);
 }
+
 
 
 @media (max-width: 480px){
@@ -323,7 +319,7 @@ section.sticky{
   font-family: var(--font-sticky);
 }
 
-
+.section3{background-color: var(--red);}
 
 
 

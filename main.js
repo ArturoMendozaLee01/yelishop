@@ -150,6 +150,7 @@ tlHome
 
 
 
+
 /* =========================
    Sección 2: Sticky
    Requiere: GSAP 3.12+ y ScrollTrigger
@@ -251,7 +252,7 @@ tlHome
     }
   });
 
-  if (prefersReduced){
+  /* if (prefersReduced){
     st.disable(false);
     // Estado estático accesible
     gsap.set(stickyHeader, { clearProps: "all" });
@@ -261,7 +262,7 @@ tlHome
   }
 
   // Recalcular al cambiar tamaño de ventana
-  window.addEventListener("resize", () => ScrollTrigger.refresh());
+  window.addEventListener("resize", () => ScrollTrigger.refresh()); */
 })();
 
 
