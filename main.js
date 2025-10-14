@@ -126,6 +126,10 @@ const tlHome = gsap.timeline({ defaults: { ease: "bounce.out" } });
 tlHome
   .from("#home-h1", { y: -600, duration: 1.5 })
   .from("#reflection", { y: 600, duration: 1.5 }, "<")
+  .from("#menuToggle",{
+    y:-300,        
+    ease: "bounce.in",
+  })
   .to("#home-h1", {
     scale: 1.1,
     duration: 0.4,
@@ -139,20 +143,23 @@ tlHome
     ease: "elastic.out(1, 0.1)",
     yoyo: true,
     repeat: 1
-  }, "<")
-  .from("#menuToggle",{
-    y:-300,        
-    ease: "bounce.in",
-  });
+  }, "<");
 
 
+/* =========================
+   Sección 2   
+   ========================= */
 
-
+const animation = gsap.fromTo(".textCube h1", 
+    {x:400, xPercent:0},
+    {x:0, xPercent:-100, duration:9, ease:"none",
+    stagger:0.75, repeat:-1}
+);
 
 
 
 /* =========================
-   Sección 2: Sticky
+   Sección 3: Sticky
    Requiere: GSAP 3.12+ y ScrollTrigger
    ========================= */
 
