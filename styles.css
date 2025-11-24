@@ -117,18 +117,18 @@ body.nav-on-light nav a{
 }
 
 @keyframes fadeAndColorChange {
-    0% {
-        opacity: 1;
-        color: var(--magenta);
-    }
-    50% {
-        opacity: 0.5;
-        color:var(--pink);
-    }
-    100% {
-        opacity: 1;
-        color: var(--magenta);
-    }
+  0% {
+    opacity: 1;
+    color: var(--magenta);
+}
+  50% {
+    opacity: 0.5;
+    color:var(--pink);
+  }
+  100% {
+    opacity: 1;
+    color: var(--magenta);
+  }
 }
 
 
