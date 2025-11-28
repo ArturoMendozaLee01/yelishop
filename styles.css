@@ -415,8 +415,6 @@ section.sticky{
 
 
 
-
-
 /* Accesibilidad: respetar reduced motion */
 @media (prefers-reduced-motion: reduce){
   .sticky-header,
@@ -458,57 +456,57 @@ section.sticky{
    ========================= */
 
 .contact-section {
-    width: 100%;
-    padding: 60px 20px;
-    text-align: center;
-    background:var(--blue); /* azul similar */
-    color: var(--white);
-    font-family: var(--font-sticky);
-    }
+  width: 100%;
+  padding: 60px 20px;
+  text-align: center;
+  background:var(--blue); /* azul similar */
+  color: var(--white);
+  font-family: var(--font-sticky);
+}
 
-    .title {
-    font-size: 4vw;
-    font-weight: 700;
-    margin-bottom: 15px;
-    }
+.title {
+  font-size: 4vw;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
 
-    .subtitle {
-    font-size: 2vw;
-    margin-bottom: 35px;
-    opacity: 0.9;
-    }
+.subtitle {
+  font-size: 2vw;
+  margin-bottom: 35px;
+  opacity: 0.9;
+}
 
-    .contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    padding-top: 10px;
-    }
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
 
-    .icon-btn {
-    color: var(--white);
-    background:var(--grayContactDark);
-    padding: 15px;
-    border-radius: 16px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease;
-    }
+.icon-btn {
+  color: var(--white);
+  background:var(--grayContactDark);
+  padding: 15px;
+  border-radius: 16px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
 
-    .icon-btn:hover {
-    transform: scale(1.12);
-    background:var(--grayContactMedium);
-    }
+.icon-btn:hover {
+  transform: scale(1.12);
+  background:var(--grayContactMedium);
+}
 
-    /* Ajustes para móvil */
-    @media (max-width: 768px) {
-    .title { font-size: 10vw; }
-    .subtitle { font-size: 6vw; }
-    .contact-links { gap: 25px; }
-    .icon-btn { padding: 12px; }
-    }
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+.title { font-size: 10vw; }
+.subtitle { font-size: 6vw; }
+.contact-links { gap: 25px; }
+.icon-btn { padding: 12px; }
+}
 
 
 .site-footer{
@@ -519,3 +517,4 @@ section.sticky{
   background-color: transparent;
   font-family: var(--font-sticky);
 }
+
